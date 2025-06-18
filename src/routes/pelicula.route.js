@@ -19,7 +19,6 @@ peliculaRouter.get("/:id", PeliculaController.peliculaGetById);
 peliculaRouter.post("/", PeliculaController.peliculaCreateOne);
 peliculaRouter.put("/:id", PeliculaController.peliculaUpdateById);
 peliculaRouter.delete("/:id", PeliculaController.peliculaDeleteOne);
-peliculaRouter.get("/estadisticas", PeliculaController.getEstadisticas);
 
 
 export { peliculaRouter };

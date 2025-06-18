@@ -83,6 +83,7 @@ export const PeliculaController = {
 
   peliculaDeleteOne: async (req, res) => {
     const { id } = req.params;
+    const pelicula = await PeliculaService.servicePeliculaValidation(id);
     const idPelicula = await PeliculaService.servicePeliculaDelete(id);
 
     if (!idPelicula) {
@@ -96,7 +97,7 @@ export const PeliculaController = {
 
     res.status(200).json({
       message: `Pelicula borrada satisfactoriamente`,
-      payload: null,
+      payload: pelicula,
       ok: true,
     });
     return;
@@ -174,11 +175,12 @@ getEstadisticas: async (req, res) => {
     }
 
     try {
+      const peliculas = await PeliculaService.serviceGetAll();
       await PeliculaService.deleteAll();
       res.status(200).json({
         ok: true,
         message: "Películas eliminadas exitosamente",
-        payload: null,
+        payload: peliculas,
       });
     } catch (error) {
       console.error("Error al borrar todas las películas:", error);
