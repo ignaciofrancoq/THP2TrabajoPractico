@@ -93,6 +93,6 @@ export const PeliculaService = {
   },
 
     deleteAll: async () => {
-    return await PeliculaRepository.borrarTodas();
+    return await PeliculaRepository.deleteAll();
   },
 };

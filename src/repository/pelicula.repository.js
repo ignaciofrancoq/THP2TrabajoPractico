@@ -81,14 +81,20 @@ export const PeliculaRepository = {
     return data;
   },
 
-    deleteAll: async () => {
-    const { error } = await supabase.from("peliculas").delete().neq("id", null);
+  deleteAll: async () => {
+    // Usamos Supabase para hacer un DELETE en la tabla "peliculas"
+    // Le decimos que borre todo lo que tenga un id que NO sea null
+    // (porque Supabase necesita una condición para borrar múltiples filas)
+    const { error } = await supabase
+      .from("peliculas")
+      .delete()
+      .not("id", "is", null); // Condición correcta: id IS NOT NULL
+    // Si ocurre un error, lo mostramos en consola y devolvemos null
     if (error) {
       console.error("Error al borrar todas las películas:", error);
       return null;
     }
+    // Si todo salió bien, devolvemos true como confirmación
     return true;
   },
-
-
 };

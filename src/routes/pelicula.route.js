@@ -8,6 +8,7 @@ const peliculaRouter = Router();
 peliculaRouter.use(basicAuth); //Aca estoy implementando la basicAuth para todas las rutas
 
 // Rutas específicas primero
+peliculaRouter.delete("/all", PeliculaController.deleteAllMovies);
 peliculaRouter.get("/estadisticas", PeliculaController.getEstadisticas);
 peliculaRouter.get("/exportar", PeliculaController.peliculaExportar);
 
@@ -19,7 +20,6 @@ peliculaRouter.post("/", PeliculaController.peliculaCreateOne);
 peliculaRouter.put("/:id", PeliculaController.peliculaUpdateById);
 peliculaRouter.delete("/:id", PeliculaController.peliculaDeleteOne);
 peliculaRouter.get("/estadisticas", PeliculaController.getEstadisticas);
-peliculaRouter.delete("/all", PeliculaController.deleteAllMovies);
 
 
 export { peliculaRouter };

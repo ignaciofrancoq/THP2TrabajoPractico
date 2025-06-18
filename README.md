@@ -121,3 +121,14 @@ NODE_ENV=test npm run dev
 - **Project Name:** Proyecto THP 2
 - **Region:** East US (Ohio)
 - **Database Password:** 1Q29MDQj9I# (acceso compartido entre los integrantes)
+
+
+## Integrantes
+
+- **Matias Ezequiel Smith**: Realizacion del CRUD basico, middleware y supabase.
+- **Naim Alexis Issa**: Funciones de complejidad alta (Funcion de exportar y de promedio) y vista de la funcion exportar
+- **Ignacio Franco**: Encargado del deploy en Render, las pruebas de Endpoints y la autenticacion.
+
+## Deploy
+
+Realizado en RENDER mediante la posibilidad de cargar un repositorio de GitHub de manera directa mediante la conexion a la cuenta.
