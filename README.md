@@ -132,3 +132,4 @@ NODE_ENV=test npm run dev
 ## Deploy
 
 Realizado en RENDER mediante la posibilidad de cargar un repositorio de GitHub de manera directa mediante la conexion a la cuenta.
+link: https://thp2trabajopractico.onrender.com 
